@@ -119,7 +119,7 @@ async def mute_on_msg(event):
         except Exception as e:
             print(str(e))
             return
-        await event.reply(f"Hey {nm}, seems like you haven't joined our channel. Please join👉 @{channel} 👈 and then press the button below to Unmute yourself!", buttons=[[Button.url("👉Channel", url=f"https://t.me/{channel}")], [Button.inline("👉UnMute Me", data=f"unmute_{event.sender_id}")]])
+        await event.reply(f"**Hey {mention}, Follow these 2 steps to UNMUTE Yourself.**\n\n 1.Join 👉 @{channel} 👈\n\n2.Now Click On below UnMute me👇 !", buttons=[[Button.url("👉JOIN CHANNEL", url=f"https://t.me/{channel}")], [Button.inline("👉Click UnMute Me", data=f"unmute_{event.sender_id}")]])
 
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data=re.compile(b"unmute_(.*)")))
