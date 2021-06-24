@@ -128,6 +128,7 @@ async def _(event):
     if uid == event.sender_id:
         x = await get_user_join(uid)
         nm = (await BotzHub(GetFullUserRequest(uid))).user.first_name
+        mention = f"[{get_display_name(user)}](tg://user?id={user.id})"
         if x is False:
             await event.answer(f"You haven't joined @{channel} yet!", cache_time=0, alert=True)
         elif x is True:
