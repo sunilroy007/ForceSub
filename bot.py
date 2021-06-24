@@ -119,7 +119,7 @@ async def mute_on_msg(event):
         except Exception as e:
             print(str(e))
             return
-        await event.reply(f"Hey {nm}, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!", buttons=[[Button.url("Channel", url=f"https://t.me/{channel}")], [Button.inline("UnMute Me", data=f"unmute_{event.sender_id}")]])
+        await event.reply(f"Hey {nm}, seems like you haven't joined our channel. Please join👉 @{channel} 👈 and then press the button below to Unmute yourself!", buttons=[[Button.url("👉Channel", url=f"https://t.me/{channel}")], [Button.inline("👉UnMute Me", data=f"unmute_{event.sender_id}")]])
 
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data=re.compile(b"unmute_(.*)")))
@@ -136,7 +136,7 @@ async def _(event):
             except Exception as e:
                 print(str(e))
                 return
-            msg = f"Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here!"
+            msg = f"Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here! Read Rules And Enjoy Leeching!"
             butt = [Button.url("Channel", url=f"https://t.me/{channel}")]
             await event.edit(msg, buttons=butt)
     else:
@@ -144,8 +144,8 @@ async def _(event):
 
 @BotzHub.on(events.NewMessage(pattern="/start"))
 async def strt(event):
-    await event.reply(f"Hi. I'm a force subscribe bot made specially for @{channel}!\n\nCheckout @BotzHub :)", buttons=[Button.url("Channel", url=f"https://t.me/{channel}"), Button.url("Repository", url="https://github.com/xditya/ForceSub")])
+    await event.reply(f"Hi. I'm a force subscribe bot made specially for @{channel}!\n\nCheckout @sunils_mirror_leech :)", buttons=[Button.url("Channel", url=f"https://t.me/{channel}"), Button.url("Repository", url="https://t.me/sunils_mirror_leech")])
 
     
-print("ForceSub Bot has started.\nDo visit @BotzHub!")
+print("ForceSub Bot has started.\nDo visit @sunils_mirror_leech!")
 BotzHub.run_until_disconnected()
